@@ -8,5 +8,5 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^(?P<year>\d+)/$',views.videos, name = 'videos'),
-    url(r'^$', include('songs.urls')),
+    url(r'^$', views.index, name = 'index'),
 )

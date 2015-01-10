@@ -7,7 +7,9 @@ class Song(models.Model):
 	year = models.IntegerField(default = 2000)
 	genre = models.ForeignKey('Genre', related_name = 'genre')
 	created = models.DateTimeField(auto_now_add = True)
+	clicks = models.IntegerField(default = 0)
 
 class Genre(models.Model):
 	name = models.CharField(max_length = 50)
 	created = models.DateTimeField(auto_now_add = True)
+	clicks = models.IntegerField(default = 0)
