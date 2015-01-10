@@ -5,8 +5,7 @@ from django.http import HttpResponse
 from .models import *
 
 def index(request):
-	output = 'hola'
-	return HttpResponse(output)
+	return render(request, 'index.html')
 
 def videos(request,year):
 	try:
