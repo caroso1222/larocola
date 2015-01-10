@@ -28,7 +28,8 @@ def update_Songs():
 					song.author = row[0]
 					song.name = row[1]
 					song.youtube_url = row[2]
-					song.year = row[3]
+					year = Year.objects.get(year=row[3])
+					song.year = year
 					genre = Genre.objects.get(name=row[4])
 					song.genre = genre
 					song.save()
