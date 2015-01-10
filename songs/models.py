@@ -5,7 +5,7 @@ class Year(models.Model):
 	clicks = models.IntegerField(default = 0)
 
 	def __unicode__(self):
-		return self.year
+		return str(self.year)
 
 class Genre(models.Model):
 	name = models.CharField(max_length = 50)
