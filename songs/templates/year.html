@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Theme</title>
+    <title>La Rocola</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
@@ -44,13 +44,13 @@
                 <div class = "col-lg-5 col-sm-5">
                     </br></br></br>
                     <div class = "row">
-                        <h1 id = "cancion">Y Ahora Quién</h1>
+                        <h1 id = "cancion">{{song.name}}</h1>
                     </div>
                     <div class = "row">
-                        <h2 id = "autor">Marc Anthony</h2>
+                        <h2 id = "autor">{{song.author}}</h2>
                     </div>
                     <div class = "row">
-                        <h3 id = "anho">2006</h3>
+                        <h3 id = "anho">{{song.year}}</h3>
                     </div>
                     <div class = "behind_info">
                     </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class = "col-lg-6 col-sm-6 col-lg-offset-1">
                     <!--iframe width="560" height="315" src="//www.youtube.com/embed/YXnjy5YlDwk?autoplay=1" frameborder="0" allowfullscreen></iframe-->
-                    <iframe width="560" height="315" src="//www.youtube.com/embed/YXnjy5YlDwk" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src={{url}} frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
             <h3 id = "noera">¿No es lo que esperabas?</h3>
             <div class="n_container">
                 <div class = "row">
-                    <a href="#" class="btn btn-lg btn-light" id = "btn_intentar">¡Inténtalo de nuevo!</a>
+                    <a href="/year/{{song.year}}" class="btn btn-lg btn-light" id = "btn_intentar">¡Dame otra!</a>
                 </div>
             </div>
         </div>
