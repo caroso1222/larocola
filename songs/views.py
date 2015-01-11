@@ -13,5 +13,6 @@ def videos(request,year):
 		output = ', '.join([p.name for p in videos])
 	except Exception,err:
 		output = ":( ese año no existe"
-	return HttpResponse(output)
+	return render(request, 'year.html')
+	#return HttpResponse(output)
 

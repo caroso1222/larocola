@@ -22,7 +22,7 @@ body {
     vertical-align: middle;
 }
 
-.text-vertical-center h1 {
+.text-vertical-center h1, .row h1 {
     margin: 0;
     padding: 0;
     font-size: 4.5em;
@@ -182,6 +182,18 @@ hr.small {
     -o-background-size: cover;
 }
 
+.year_header {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../img/year_bg.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 /* About */
 
 .about {
@@ -262,6 +274,32 @@ footer {
     color:white;
 }
 
+#blanca_year{
+    color:white;
+    position:relative;
+    top:0.2em;
+    font-size: 4.5em;
+    font-weight: 700;
+    margin-top: 0px;
+    margin-left: 30px;
+    z-index: 10;
+}
+.opacity_bar{
+    position: relative;
+    bottom: 5.7em;
+    height: 7em;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.yellow_bar{
+    position: absolute;
+    bottom: 0px;
+    height: 9em;
+    width:100%;
+    background-color: #dbc287;
+}
+
 #container_bajo{
     margin-left: auto;
     margin-right: auto;
@@ -289,4 +327,85 @@ footer {
 
 #margen{
     padding-bottom: 40px;
+}
+
+#year_head{
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+#div_video{
+    margin-top: 40px;
+}
+
+#cancion{
+    text-align: right;
+    position: relative;
+    z-index: 100;
+    color: white;
+    font-size: 37pt;
+}
+
+#autor{
+    text-align: right;
+    position: relative;
+    z-index: 100;
+    color: white;
+}
+
+#anho{
+    text-align: right;
+    position: relative;
+    z-index: 100;
+    color: white;
+}
+
+#noera{
+    text-align: center;
+    color:white;
+    font-weight: 300;
+    position: relative;
+    bottom: 0.3em;
+    font-size: 1.4em;
+}
+
+#intentalo{
+    text-align: center;
+    color:white;
+    position: relative;
+    bottom: 0.5em;
+    font-weight: 300;
+    font-size: 1.4em;
+}
+
+#btn_intentar{
+    background-color: #3471b8;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+#btn_intentar:hover {
+  background-color: #265286;
+  color: white;  
+}
+
+.n_container{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width:100%;
+    position: relative;
+    bottom: 0px;
+}
+
+.behind_info{
+    position: relative;
+    bottom: 190px;
+    left:-40px;
+    height: 14em;
+    width:115%;
+    background-color: #23b683;
+    opacity: 0.8;
+    z-index: 5;
 }

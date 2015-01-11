@@ -16,8 +16,8 @@ class Genre(models.Model):
 		return self.name
 
 class Song(models.Model):
-	author = models.CharField(max_length = 50)
-	name = models.CharField(max_length = 50)
+	author = models.CharField(max_length = 100)
+	name = models.CharField(max_length = 100)
 	youtube_url = models.URLField()
 	year = models.ForeignKey('Year', related_name = 'the_year')
 	genre = models.ForeignKey('Genre', related_name = 'genre')
