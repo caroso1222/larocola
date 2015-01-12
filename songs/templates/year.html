@@ -52,8 +52,19 @@
                     <div class = "row">
                         <h3 id = "anho">{{song.year}}</h3>
                     </div>
-                    <div class = "behind_info">
+                    {% if box_height == 'big_x2' %}
+                    <div class = "green_box_x2">
                     </div>
+                    {% elif box_height == 'big_x1'%}
+                    <div class = "green_box_x1">
+                    </div>
+                    {% elif box_height == 'big_x0'%}
+                    <div class = "green_box_x0">
+                    </div>
+                    {% else %}
+                    <div class = "green_box_normal">
+                    </div>
+                    {% endif %}
 
                 </div>
                 <div class = "col-lg-6 col-sm-6 col-lg-offset-1">

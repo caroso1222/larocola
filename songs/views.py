@@ -22,9 +22,31 @@ def videos(request,year):
 		print final_url
 		context['url']=final_url
 		template = 'year.html'
+
+
+		# rand_song = Song.objects.get(name='La negra tiene tumbao')
+		# context['song']=rand_song
+		#Calculates the height of the gree box
+
+		
+		len_author = len(rand_song.author)
+		len_name = len(rand_song.name)
+
+		if len_author > 42 and len_name > 20:
+			box_height = 'big_x2'
+		elif len_name > 20:
+			box_height = 'big_x1'
+		elif len_author > 42:
+			box_height = 'big_x0'
+		else:
+			box_height = 'normal'
+
+		context['box_height']=box_height
+
 		return render(request,template,context)
 		#output = ', '.join([p.name for p in videos])
 	except Exception,err:
 		output = ":( ese año no existe"
+		print traceback.format_exc()
 		return HttpResponse(output)
 
