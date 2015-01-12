@@ -68,8 +68,24 @@
 
                 </div>
                 <div class = "col-lg-6 col-sm-6 col-lg-offset-1">
+
+
+                    <script type="text/javascript" src="swfobject.js"></script>
+                    <div id="ytapiplayer">
+                        You need Flash player 8+ and JavaScript enabled to view this video.
+                    </div>
+
+                    <script type="text/javascript">
+
+                    var params = { allowScriptAccess: "always" };
+                    var atts = { id: "myytplayer" };
+                    swfobject.embedSWF("http://www.youtube.com/v/VIDEO_ID?enablejsapi=1&playerapiid=ytplayer&version=3",
+                     "ytapiplayer", "425", "356", "8", null, null, params, atts);
+
+                    </script>
+
                     <!--iframe width="560" height="315" src="//www.youtube.com/embed/YXnjy5YlDwk?autoplay=1" frameborder="0" allowfullscreen></iframe-->
-                    <iframe width="560" height="315" src={{url}} frameborder="0" allowfullscreen></iframe>
+                    <!--iframe width="560" height="315" src={{url}} frameborder="0" allowfullscreen></iframe-->
                 </div>
             </div>
         </div>

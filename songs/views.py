@@ -32,9 +32,9 @@ def videos(request,year):
 		len_author = len(rand_song.author)
 		len_name = len(rand_song.name)
 
-		if len_author > 42 and len_name > 20:
+		if len_author > 42 and len_name > 22:
 			box_height = 'big_x2'
-		elif len_name > 20:
+		elif len_name > 22:
 			box_height = 'big_x1'
 		elif len_author > 42:
 			box_height = 'big_x0'
@@ -49,4 +49,3 @@ def videos(request,year):
 		output = ":( ese año no existe"
 		print traceback.format_exc()
 		return HttpResponse(output)
-

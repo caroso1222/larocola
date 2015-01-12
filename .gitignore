@@ -57,3 +57,4 @@ target/
 migrations/
 songs.xlsx
 ~$songs.xlsx
+settings.py
