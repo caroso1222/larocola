@@ -58,3 +58,4 @@ migrations/
 songs.xlsx
 ~$songs.xlsx
 settings.py
+*.pyc
