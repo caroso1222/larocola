@@ -58,4 +58,5 @@ migrations/
 songs.xlsx
 ~$songs.xlsx
 larocola/settings.py
+settings.py
 *.pyc
