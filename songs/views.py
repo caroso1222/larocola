@@ -46,6 +46,6 @@ def videos(request,year):
 		return render(request,template,context)
 		#output = ', '.join([p.name for p in videos])
 	except Exception,err:
-		output = ":( ese año no existe"
+		output = ":( Estamos trabajando para que puedas escuchar la mejor música de este año, espéralo pronto."
 		print traceback.format_exc()
 		return HttpResponse(output)
