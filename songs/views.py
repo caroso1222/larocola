@@ -4,16 +4,29 @@ from random import randint
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
+from django.views.decorators.csrf import csrf_exempt
+from django.db.models import F
 
 def index(request):
+	x_forwarded_for = request.META.get('HHTP_X_FORWARDED_FOR')
+	if x_forwarded_for:
+		ip_address = x_forwarded_for.split(',')[0]
+	else:
+		ip_address = request.META.get('REMOTE_ADDR')
+
+	visitor, created = Visitor.objects.get_or_create(ip = ip_address)
+	visitor.counter = F('counter_index')+1
+	visitor.save()
 	return render(request, 'index.html')
 
+@csrf_exempt
 def videos(request,year):
 	try:
 		songs = Song.objects.filter(year__year = year)
 		count = songs.all().count()
 		random_index = randint(0,count-1)
 		rand_song = songs[random_index]
+
 		context = {"song": rand_song}
 		url_code = rand_song.youtube_url.split('=')[1]
 		#url_init = "//www.youtube.com/embed/"

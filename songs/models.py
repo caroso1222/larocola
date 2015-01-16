@@ -26,3 +26,13 @@ class Song(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+class Visitor(models.Model):
+	created = models.DateTimeField(auto_now_add = True)
+	ip = models.GenericIPAddressField()
+	counter_index = models.IntegerField(default = 0)
+	counter_years = models.IntegerField(default = 0)
+	last_visited = models.CharField(max_length= 10, blank = True)
+
+	def __unicode__(self):
+		return self.ip
