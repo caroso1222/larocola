@@ -115,7 +115,7 @@
                       }
                   }
                     function goToNextSong(){
-                        post('/year/2009/', {previous_song: '{{url}}'});
+                        post('/year/{{song.year}}/', {previous_song: '{{url}}'});
                         //window.location.replace('/year/{{year}}/');
                     }
             </script>
@@ -127,7 +127,10 @@
     <h3 id = "noera">¿No es lo que esperabas?</h3>
     <div class="n_container">
         <div class = "row">
-            <a href="/year/{{song.year}}" class="btn btn-lg btn-light" id = "btn_intentar">¡Dame otra!</a>
+            <form action = "/year/{{song.year}}/" method = "post">
+                <input type="hidden" name="previous_song" value="{{url}}" />
+                <input type="submit" name="previous_song_btn" value="¡Dame otra!" class = "btn btn-lg btn-light" id = "btn_intentar"/>
+            </form>
         </div>
     </div>
 </div>
