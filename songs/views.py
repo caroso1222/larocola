@@ -59,18 +59,14 @@ def videos(request,year):
 				stop = True
 
 		context = {"song": rand_song}
-		#url_init = "//www.youtube.com/embed/"
-		#autoplay = "?autoplay=1"
-		#final_url = url_init+url_code+autoplay
 		context['url']=url_code
 		template = 'year.html'
 
 
 		# rand_song = Song.objects.get(name='La negra tiene tumbao')
 		# context['song']=rand_song
-		#Calculates the height of the gree box
 
-		
+		#Calculates the height of the gree box
 		len_author = len(rand_song.author)
 		len_name = len(rand_song.name)
 
