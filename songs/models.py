@@ -31,8 +31,8 @@ class Visitor(models.Model):
 	created = models.DateTimeField(auto_now_add = True)
 	ip = models.GenericIPAddressField()
 	counter_index = models.IntegerField(default = 0)
-	counter_years = models.IntegerField(default = 0)
-	last_visited = models.CharField(max_length= 10, blank = True)
+	counter_videos = models.IntegerField(default = 0)
+	last_visited = models.CharField(max_length= 50, default = "0?0?0")
 
 	def __unicode__(self):
 		return self.ip

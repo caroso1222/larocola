@@ -22,7 +22,7 @@ class SongAdmin(admin.ModelAdmin):
 		ordering = ['created']
 
 class VisitorAdmin(admin.ModelAdmin):
-	list_display = ['ip','counter_index','counter_years','last_visited','created']
+	list_display = ['ip','counter_index','counter_videos','last_visited','created']
 
 	class Meta:
 		model = Visitor
