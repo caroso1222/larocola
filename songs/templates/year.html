@@ -91,6 +91,7 @@
                         player = new YT.Player('player', {
                           height: '290',
                           width: '480',
+                          playerVars: {iv_load_policy:'3'},
                           videoId: '{{url}}',
                           events: {
                             'onReady': onPlayerReady,
