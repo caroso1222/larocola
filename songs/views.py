@@ -16,11 +16,12 @@ def videos(request,year):
 		rand_song = songs[random_index]
 		context = {"song": rand_song}
 		url_code = rand_song.youtube_url.split('=')[1]
-		url_init = "//www.youtube.com/embed/"
-		autoplay = "?autoplay=1"
-		final_url = url_init+url_code+autoplay
+		#url_init = "//www.youtube.com/embed/"
+		#autoplay = "?autoplay=1"
+		#final_url = url_init+url_code+autoplay
 		print url_code
 		context['url']=url_code
+		context['year']=year
 		template = 'year.html'
 
 
