@@ -71,7 +71,6 @@
 
             </div>
             <div class = "col-lg-6 col-sm-6 col-lg-offset-1">
-              <!-------------------------------->
               <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
               <div id="player"></div>
 
@@ -90,7 +89,7 @@
                         player = new YT.Player('player', {
                           height: '290',
                           width: '480',
-                          videoId: 'M7lc1UVf-VE',
+                          videoId: '{{url}}',
                           events: {
                             'onReady': onPlayerReady,
                             'onStateChange': onPlayerStateChange
@@ -115,9 +114,12 @@
                   }
                   function stopVideo() {
                     player.stopVideo();
+                    
                 }
+                    function goToNextSong(){
+                        window.location.replace('/year/2000');
+                    }
             </script>
-<!-------------------------------->
 </div>
 </div>
 </div>

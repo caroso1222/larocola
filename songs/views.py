@@ -19,8 +19,8 @@ def videos(request,year):
 		url_init = "//www.youtube.com/embed/"
 		autoplay = "?autoplay=1"
 		final_url = url_init+url_code+autoplay
-		print final_url
-		context['url']=final_url
+		print url_code
+		context['url']=url_code
 		template = 'year.html'
 
 
