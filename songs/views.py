@@ -7,6 +7,8 @@ from .models import *
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import F
 
+LAST_VIDEOS = 5
+
 def index(request):
 	x_forwarded_for = request.META.get('HHTP_X_FORWARDED_FOR')
 	if x_forwarded_for:
@@ -42,9 +44,9 @@ def videos(request,year):
 	ultimas = visitor.last_visited.split('?')
 	if request.method == 'POST':
 		previous_song = request.POST.get('previous_song','')
-		ultimas[0]=ultimas[1]
-		ultimas[1]=ultimas[2]
-		ultimas[2]=previous_song
+		for i in range(0,LAST_VIDEOS-1):
+			ultimas[i]=ultimas[i+1]
+		ultimas[LAST_VIDEOS-1]=previous_song
 		visitor.last_visited='?'.join(ultimas)
 		visitor.save()
 
