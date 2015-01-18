@@ -47,15 +47,11 @@ def videos(request,year):
 		ultimas[2]=previous_song
 		visitor.last_visited='?'.join(ultimas)
 		visitor.save()
-		print visitor.last_visited
 
 	try:
 		year_init = int(year.split('a')[0])
-		print "el año%d"%year_init
 		if year_init == 1960:
 			songs = Song.objects.filter(year__year__range = [year_init,year_init+19])
-			print "hola"
-			print songs
 		else:
 			songs = Song.objects.filter(year__year__range = [year_init,year_init+4])
 		count = songs.all().count()
