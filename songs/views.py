@@ -22,6 +22,11 @@ def index(request):
 @csrf_exempt
 def videos(request,year):
 
+	if(year!="1960a1979" and year!="1980a1984" and year!="1985a1989" and year!="1990a1994" and 
+		year!="1995a1999" and year!="2000a2004" and year!="2005a2009" and year!="2010a2014"):
+		output = "Error 404"
+		return HttpResponse(output)
+
 	#Increase the counter of videos seen by this user 
 	x_forwarded_for = request.META.get('HHTP_X_FORWARDED_FOR')
 	if x_forwarded_for:
@@ -46,7 +51,13 @@ def videos(request,year):
 
 	try:
 		year_init = int(year.split('a')[0])
-		songs = Song.objects.filter(year__year__in = [year_init,year_init+1,year_init+2,year_init+3,year_init+4])
+		print "el año%d"%year_init
+		if year_init == 1960:
+			songs = Song.objects.filter(year__year__range = [year_init,year_init+19])
+			print "hola"
+			print songs
+		else:
+			songs = Song.objects.filter(year__year__range = [year_init,year_init+4])
 		count = songs.all().count()
 
 		#Selects a random song that's not in the last_visited list. 
