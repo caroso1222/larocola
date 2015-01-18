@@ -32,7 +32,7 @@ class Visitor(models.Model):
 	ip = models.GenericIPAddressField()
 	counter_index = models.IntegerField(default = 0)
 	counter_videos = models.IntegerField(default = 0)
-	last_visited = models.CharField(max_length= 150, default = "0?0?0?0?0")
+	last_visited = models.CharField(max_length= 150, default = "0?0?0?0?0?0?0?0?0?0")
 
 	def __unicode__(self):
 		return self.ip

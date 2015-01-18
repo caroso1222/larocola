@@ -7,7 +7,7 @@ from .models import *
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import F
 
-LAST_VIDEOS = 5
+LAST_VIDEOS = 10
 
 def index(request):
 	x_forwarded_for = request.META.get('HHTP_X_FORWARDED_FOR')
@@ -65,8 +65,10 @@ def videos(request,year):
 			random_index = randint(0,count-1)
 			rand_song = songs[random_index]
 			url_code = rand_song.youtube_url.split('=')[1]
-			if(url_code!=ultimas[0] and url_code!=ultimas[1] and url_code!=ultimas[2] and url_code!=ultimas[3] and url_code!=ultimas[4]):
-				stop = True
+			stop = True
+			for i in range(0,LAST_VIDEOS):
+				if url_code == ultimas[i]:
+					stop = False
 
 		context = {"song": rand_song}
 		context['url']=url_code
