@@ -65,7 +65,7 @@ def videos(request,year):
 			random_index = randint(0,count-1)
 			rand_song = songs[random_index]
 			url_code = rand_song.youtube_url.split('=')[1]
-			if(url_code!=ultimas[0] and url_code!=ultimas[1] and url_code!=ultimas[2]):
+			if(url_code!=ultimas[0] and url_code!=ultimas[1] and url_code!=ultimas[2] and url_code!=ultimas[3] and url_code!=ultimas[4]):
 				stop = True
 
 		context = {"song": rand_song}
