@@ -7,6 +7,6 @@ urlpatterns = patterns('',
     # url(r'^$', 'larocola.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^(?P<year>\d+)/$',views.videos, name = 'videos'),
+    url(r'^(?P<year>\w+)/$',views.videos, name = 'videos'),
     url(r'^$', views.index, name = 'index'),
 )

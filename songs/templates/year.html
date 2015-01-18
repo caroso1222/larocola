@@ -23,7 +23,7 @@
 
     <script src="{{STATIC_URL}}js/larocola.js"></script>
 
-    <script>
+    <!--script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -31,7 +31,7 @@
 
           ga('create', 'UA-58505326-2', 'auto');
           ga('send', 'pageview');
-    </script>
+    </script-->
 
   </head>
 
@@ -116,7 +116,7 @@
                       }
                   }
                     function goToNextSong(){
-                        post('/year/{{song.year}}/', {previous_song: '{{url}}'});
+                        post('/year/{{year_interval}}/', {previous_song: '{{url}}'});
                         //window.location.replace('/year/{{year}}/');
                     }
             </script>
@@ -128,7 +128,7 @@
     <h3 id = "noera">¿No es lo que esperabas?</h3>
     <div class="n_container">
         <div class = "row">
-            <form action = "/year/{{song.year}}/" method = "post">
+            <form action = "/year/{{year_interval}}/" method = "post">
                 <input type="hidden" name="previous_song" value="{{url}}" />
                 <input type="submit" name="previous_song_btn" value="¡Dame otra!" class = "btn btn-lg btn-light" id = "btn_intentar"/>
             </form>

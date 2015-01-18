@@ -45,7 +45,8 @@ def videos(request,year):
 		print visitor.last_visited
 
 	try:
-		songs = Song.objects.filter(year__year = year)
+		year_init = int(year.split('a')[0])
+		songs = Song.objects.filter(year__year__in = [year_init,year_init+1,year_init+2,year_init+3,year_init+4])
 		count = songs.all().count()
 
 		#Selects a random song that's not in the last_visited list. 
@@ -61,6 +62,7 @@ def videos(request,year):
 		context = {"song": rand_song}
 		context['url']=url_code
 		template = 'year.html'
+		context['year_interval']=year
 
 
 		# rand_song = Song.objects.get(name='La negra tiene tumbao')
@@ -84,7 +86,8 @@ def videos(request,year):
 		return render(request,template,context)
 		#output = ', '.join([p.name for p in videos])
 	except Exception,err:
-		if(int(year)>2014):
+		year_init = int(year.split('a')[0])
+		if(year_init>2014):
 			output = "Nuestros analistas aún viajan en el DeLorean para traerte la mejor música de %s, espéralo!" %(str(year))
 		else:
 			output = ":( Estamos trabajando para que puedas escuchar la mejor música de %s, espéralo pronto!" %(str(year))
