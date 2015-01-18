@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import F
+from django.http import Http404
 
 LAST_VIDEOS = 10
 
@@ -26,8 +27,7 @@ def videos(request,year):
 
 	if(year!="1960a1979" and year!="1980a1984" and year!="1985a1989" and year!="1990a1994" and 
 		year!="1995a1999" and year!="2000a2004" and year!="2005a2009" and year!="2010a2014"):
-		output = "Error 404"
-		return HttpResponse(output)
+		raise Http404
 
 	#Increase the counter of videos seen by this user 
 	x_forwarded_for = request.META.get('HHTP_X_FORWARDED_FOR')
@@ -97,10 +97,4 @@ def videos(request,year):
 		return render(request,template,context)
 		#output = ', '.join([p.name for p in videos])
 	except Exception,err:
-		year_init = int(year.split('a')[0])
-		if(year_init>2014):
-			output = "Nuestros analistas aún viajan en el DeLorean para traerte la mejor música de %s, espéralo!" %(str(year))
-		else:
-			output = ":( Estamos trabajando para que puedas escuchar la mejor música de %s, espéralo pronto!" %(str(year))
-		print traceback.format_exc()
-		return HttpResponse(output)
+		raise Http404
