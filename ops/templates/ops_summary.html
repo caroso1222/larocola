@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load my_filters %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>OPS summary</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{STATIC_URL}}css/bootstrap7.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/hover.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{{STATIC_URL}}css/jquery-ui.css" type="text/css"/>
+    <!--link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"-->
+
+  </head>
+
+  <body>
+  	<div class = "container">
+  		<h1>Itinerario</h1>
+      
+      <h5> {% for evento in context.eventos3 %}
+          {{evento}}
+        {%endfor%}</h5>
+      <div class = "tabla-mes">
+    		<div class = "row dias-lbl">
+    			<div class="col-sm-1">Lunes</div>
+  		    <div class="col-sm-1">Martes</div>
+  		    <div class="col-sm-1">Miércoles</div>
+  		    <div class="col-sm-1">Jueves</div>
+  		    <div class="col-sm-1">Viernes</div>
+  		    <div class="col-sm-1">Sábado</div>
+  		    <div class="col-sm-1">Domingo</div>
+    		</div>
+        <div>
+          {% for nombre in nombres %}
+            {% if forloop.counter0|divisibleby:7 %}
+            </div>
+            <div class = "row row-dias-1">
+            {%endif%}
+              <div class="col-sm-1"> 
+                {% with contador=forloop.counter%}
+                  {{nombres.contador}}
+                  {% for evento in listas|key:contador %}
+                    {% if evento.tipoEvento == 1%}
+                    <div class = "container-vuelo" >
+                      <span class = "codigo-vuelo" style = "display:none;">
+                        {{evento.codigo}}
+                      </span>
+                      <span class = "destino-origen" >
+
+                        {{evento.origen}} -
+                        <!--span class = "fa fa-arrows-h fa-lg"></span-->
+                        {{evento.destino}}
+                      </span>
+                      <span class = "horas-vuelo" >
+                        {% if evento.fechaSalida.hour < 10 %}<span style="display: inline">0{{evento.fechaSalida.hour}}{% else %}<span style="display: inline">{{evento.fechaSalida.hour}}{% endif %}:</span>​{% if evento.fechaSalida.minute < 10 %}<span style="display: inline">0{{evento.fechaSalida.minute}}</span>{% else %}<span style="display: inline">{{evento.fechaSalida.minute}}</span>  
+                        {% endif %}
+                        -
+                        {% if evento.fechaLlegada.hour < 10 %}<span style="display: inline">0{{evento.fechaLlegada.hour}}{% else %}<span style="display: inline">{{evento.fechaLlegada.hour}}{% endif %}:</span>​{% if evento.fechaLlegada.minute < 10 %}<span style="display: inline">0{{evento.fechaLlegada.minute}}</span>{% else %}<span style="display: inline">{{evento.fechaLlegada.minute}}</span>  
+                        {% endif %}
+                      </span>
+                    </div>
+                    {% endif %}
+                  {% endfor %}
+                {% endwith %}
+              </div>
+          {% endfor%}
+
+        </div>
+      </div>
+
+  	</div>
+  </body>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <script src="{{STATIC_URL}}js/jquery-ui.js"></script>
+    <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+    <script src="{{STATIC_URL}}js/script.js"></script>
+  </body>
+</html>

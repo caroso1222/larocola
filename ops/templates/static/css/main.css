@@ -1,0 +1,169 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);
+
+@-webkit-keyframes fade-in {
+    0%   { opacity: 0; }
+    50%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fade-in-smooth {
+    0%   { opacity: 0; }
+    40%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body {
+ 	background-color: #ffffff;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    
+    margin-top: 70px;
+/*
+    -webkit-animation-name: fade-in;
+    -webkit-animation-duration: 2s;*/
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato";
+    font-weight: 300;
+    color: #333;
+}
+
+.dias-lbl{
+  text-align: center;
+}
+
+.dias-lbl .col-sm-1{
+  background-color: #ea0b1a;
+  color:#ffffff;
+  font-weight: 700;
+  margin-left: 1px;
+  margin-right: 1px;
+  width: 14%;
+  text-transform: uppercase;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+.row-dias-1 .col-sm-1,
+.row-dias-2 .col-sm-1,
+.row-dias-3 .col-sm-1,
+.row-dias-4 .col-sm-1,
+.row-dias-5 .col-sm-1{
+  background-color: #E0DDCF;
+  margin-left: 1px;
+  margin-right: 1px;
+  width: 14%;
+  height: 300px;
+  padding-top: 3px;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.row-dias-1,
+.row-dias-2,
+.row-dias-3,
+.row-dias-4,
+.row-dias-5{
+  margin-top: 2px;
+}
+
+.row-dias-1{
+  -webkit-animation-name: fade-in-smooth;
+    -webkit-animation-duration: 2s;
+}
+
+.row-dias-2{
+  -webkit-animation-name: fade-in-smooth;
+    -webkit-animation-duration: 2.5s;
+}
+.row-dias-3{
+  -webkit-animation-name: fade-in-smooth;
+    -webkit-animation-duration: 3s;
+}
+.row-dias-4{
+  -webkit-animation-name: fade-in-smooth;
+    -webkit-animation-duration: 3.5s;
+}
+.row-dias-5{
+  -webkit-animation-name: fade-in-smooth;
+    -webkit-animation-duration: 4s;
+}
+
+.tabla-mes{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container-vuelo{
+  background-color:#2D232E ;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 55px;
+  margin-top: 3px;
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.container-codigo{
+  background-color:#76F7BF ;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 55px;
+  margin-top: 3px;
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.destino-origen{
+  color: #ffffff;
+  font-weight: 400;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: -5px;
+  display: block;
+  cursor:default;
+}
+
+@media all and (max-width: 800px) {
+    .row-dias-1 .col-sm-1{
+      width: 90%;
+      margin-top: 2px;
+    }
+
+    .dias-lbl{
+      display: none;
+    }
+}
+
+.fa-lg  {
+  font-size: 3px;
+}
+
+.horas-vuelo{
+  color:#C9BFC9;
+  font-size: 13px;
+}
+
+.codigo-vuelo{
+  color: #ffffff;
+  display: block;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  cursor:default;
+}
